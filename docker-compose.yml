@@ -18,7 +18,7 @@ services:
       .env
     tmpfs:
       - /var/opt/orm_test/tmp
-    volumes: &yoshina_volumes
+    volumes:
       - .:/var/opt/orm_test
       - bundle_volume:/var/opt/orm_test/vendor/bundle
     depends_on:
