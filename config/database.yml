@@ -1,0 +1,18 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem "sqlite3"
+#
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("PG_CONNECTION_POOL_SIZE") { 5 } %>
+  timeout: <%= ENV.fetch("PG_TIMEOUT") { 5000 } %>
+  user: <%= ENV.fetch("PG_USER_NAME") { "postgres" } %>
+  host: <%= ENV.fetch("PG_HOST_URL") { "db" } %>
+  port: <%= ENV.fetch("PG_PORT") { 5432 } %>
+  password: <%= ENV.fetch("PG_PASSWORD") { "" } %>
+
+development:
+  <<: *default
+  database: orm_test_dev
