@@ -1,4 +1,4 @@
 ---
-BUNDLE_PATH: "vendor/bundle"
+BUNDLE_PATH: "/usr/local/bundle"
 BUNDLE_CLEAN: "true"
 BUNDLE_FORCE_RUBY_PLATFORM: "true"
