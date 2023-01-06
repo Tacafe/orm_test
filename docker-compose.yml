@@ -2,6 +2,8 @@ version: "3.8"
 services:
   db:
     image: postgres:13.7
+    environment:
+      POSTGRES_PASSWORD: password
     volumes:
       - db_volume:/var/lib/postgresql/data
     ports:
