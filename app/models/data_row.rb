@@ -1,0 +1,2 @@
+class DataRow < ApplicationRecord
+end
