@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"log"
-	"os"
 
 	"orm_test/ent" // current dirの名前（module名）をrootに、ormのmoduleを指定
 	"orm_test/ent/migrate"
@@ -21,7 +20,7 @@ func main() {
 	ctx := context.Background()
 
 	// Run the auto migration tool.
-	if err := client.Schema.WriteTo(ctx, os.Stdout, migrate.WithForeignKeys(false)); err != nil {
+	if err := client.Schema.Create(ctx, migrate.WithForeignKeys(false)); err != nil {
 		log.Fatalf("failed printing schema changes: %v", err)
 	}
 	log.Print("ent sample done.")
