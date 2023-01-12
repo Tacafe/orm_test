@@ -28,7 +28,10 @@ func readCSV(filename string, idx int) []string {
 
 	// [][]stringなのでループする
 	documents := []string{}
-	for _, v := range rows {
+	for i, v := range rows {
+		if i == 0 {
+			continue
+		}
 		documents = append(documents, v[idx])
 	}
 	return documents
